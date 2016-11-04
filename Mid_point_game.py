@@ -374,6 +374,24 @@ class GameLoop:
                                 #send decision to other player
                                 return -1
 
+        def instructions(self):
+                while(True):
+                        self.stdscr.erase()
+                        self.stdscr.border(0)
+                        self.stdscr.addstr(3, 5, "Controls")
+                        self.stdscr.addstr(5, 10, "Use the arrow keys to move")
+                        self.stdscr.addstr(7, 10, "Press p to pause the game")
+                        self.stdscr.addstr(9, 10, "TIP: Pausing the game allows the user to switch")
+                        self.stdscr.addstr(10, 15, "between moving vertically or horizontally")
+                        self.stdscr.addstr(12, 10, "TIP: You can exit the game prematurely through")
+                        self.stdscr.addstr(13, 15, "the pause menu")
+                        self.stdscr.addstr(20, 10, "Press Any Key To Continue")
+                        self.stdscr.refresh()
+                        choice = self.stdscr.getch()
+                        if(choice != -1):
+                                return
+                        
+
 
 
         def menu(self, name):
@@ -385,8 +403,10 @@ class GameLoop:
                         self.stdscr.addstr(5, 10, "Play new game - Press 1")
                         #self.stdscr.addstr(7, 10, "Join a player 1 - Press 2")
                         #self.stdscr.addstr(9, 10, "Highscores - Press 3")
-                        #self.stdscr.addstr(11, 10, "Exit - Press 4")
-                        self.stdscr.addstr(7, 10, "Exit - Press 4")
+                        #self.stdscr.addstr(11, 10, "Instructions - Press 4")
+                        #self.stdscr.addstr(13, 10, "Exit - Press 5")
+                        self.stdscr.addstr(7, 10, "Instructions - Press 4")
+                        self.stdscr.addstr(9, 10, "Exit - Press 5")
                         self.stdscr.refresh()
                         choice = self.stdscr.getch()
                         if choice == 49: #choice is 1
@@ -402,6 +422,8 @@ class GameLoop:
                         #elif choice == 51:
                         #       call highscores menu
                         elif choice == 52: #choice is 4
+                                self.instructions()
+                        elif choice == 53: #choice is 5
                                 return False
                 
 
