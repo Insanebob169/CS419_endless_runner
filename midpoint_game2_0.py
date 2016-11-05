@@ -415,7 +415,7 @@ class GameLoop:
         while(True):
             self.stdscr.erase()
             self.stdscr.border(0)
-            self.stdscr.addstr(3, 5, name + ", what do you want to do?")
+            self.stdscr.addstr(3, 5, "What do you want to do?")
             self.stdscr.addstr(5, 10, "Play as Player 1 - Press 1")
             self.stdscr.addstr(7, 10, "Play as Player 2 - Press 2")
             #self.stdscr.addstr(9, 10, "Highscores - Press 3")
