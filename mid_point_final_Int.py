@@ -412,7 +412,7 @@ class Background():
                 self.backWin.addstr(y+2, x, "    /   o        \\_/  \\", curses.color_pair(8))
                 self.backWin.addstr(y+3, x, "   |         /\\        |", curses.color_pair(8))
                 self.backWin.addstr(y+4, x, "    \___     \\/____O__/", curses.color_pair(8))
-                self.backWin.addstr(y+5, x, "        \\o___/", curses.color_pair(5))
+                self.backWin.addstr(y+5, x, "        \\o___/", curses.color_pair(8))
 
         def drawAsteroidL(self, x, y):
                 self.backWin.addstr(y+1, x,  "             __________", curses.color_pair(9))
