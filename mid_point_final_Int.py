@@ -504,7 +504,6 @@ class Input():
                                 s1.sendInput(str(option))
                                 if(option == 8):
                                         self.player = (self.player + 1) % 2
-                                        return True
                         elif otherChoice == 3: 
                                 message(self, "Other player chose to exit.")
                                 return False
