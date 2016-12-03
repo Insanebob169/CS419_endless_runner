@@ -1098,7 +1098,7 @@ class GameLoop:
                 while(play):
                         self.resetGame()
                         self.runGameLoop()
-                        self.menu()
+                        play = self.menu()
 
         def resetGame(self):            
                 global GAMEOBJECTDICT , MAX_X , MAX_Y , FRAMECOUNT , ACTIVEOBJECTSET, FRAMECOUNT
@@ -1174,6 +1174,8 @@ class GameLoop:
                 for score in self.highscores: 
                         self.stdscr.addstr(line * 2 + 3, 10, str(score))
                         line += 1
+                        if line > 4:
+                            break
 
                 self.stdscr.addstr(20, 10, "Press Any Key To Continue")
                 self.stdscr.refresh()
