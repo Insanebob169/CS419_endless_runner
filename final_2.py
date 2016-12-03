@@ -4,7 +4,7 @@
 import curses , curses.panel  
 import time 
 import random
-import sys, socket, signal, select, termios, tty, argparse
+import os, sys, socket, signal, select, termios, tty, argparse
 from threading import Thread
 import threading
 import collections
