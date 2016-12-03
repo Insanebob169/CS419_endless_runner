@@ -669,12 +669,19 @@ class Background():
 
         def drawStars(self, x, y):
                 self.backWin.addstr(y, x, "  .       *             .   .")
-                self.backWin.addstr(y, x, "*" )
                 self.backWin.addstr(y+1, x, ".              +   /\\        *     .")
                 self.backWin.addstr(y+2, x, "      .          <    >")
                 self.backWin.addstr(y+3, x, "                 x \\/")
                 self.backWin.addstr(y+4, x, "  *          .              +      *")
                 self.backWin.addstr(y+5, x, "       .          .")
+
+        def clearStars(self, x, y):
+                self.backWin.addstr(y, x, "                                    ")
+                self.backWin.addstr(y+1, x, "                                    ")
+                self.backWin.addstr(y+2, x, "                                    ")
+                self.backWin.addstr(y+3, x, "                                    ")
+                self.backWin.addstr(y+4, x, "                                    ")
+                self.backWin.addstr(y+5, x, "                                    ")
 
         def drawAsteroidS(self, x, y):
                 self.backWin.addstr(y, x,   "   ___" , curses.color_pair(7))
@@ -683,7 +690,13 @@ class Background():
                 self.backWin.addstr(y+3, x, " |__   o _/" , curses.color_pair(7))
                 self.backWin.addstr(y+4, x, "   \\___/" , curses.color_pair(7))
 
-
+        def clearAsteroidS(self, x, y):
+                self.backWin.addstr(y, x,   "           " , curses.color_pair(7))
+                self.backWin.addstr(y+1, x, "           " , curses.color_pair(7))
+                self.backWin.addstr(y+2, x, "           " , curses.color_pair(7))
+                self.backWin.addstr(y+3, x, "           " , curses.color_pair(7))
+                self.backWin.addstr(y+4, x, "           " , curses.color_pair(7))
+                
         def drawAsteroidM(self, x, y):
                 self.backWin.addstr(y, x,   "        ___________", curses.color_pair(8))
                 self.backWin.addstr(y+1, x, "     __/ O       | \\__ ", curses.color_pair(8))
@@ -691,6 +704,14 @@ class Background():
                 self.backWin.addstr(y+3, x, "   |         /\\        |", curses.color_pair(8))
                 self.backWin.addstr(y+4, x, "    \___     \\/____O__/", curses.color_pair(8))
                 self.backWin.addstr(y+5, x, "        \\o___/", curses.color_pair(8))
+
+        def clearAsteroidM(self, x, y):
+                self.backWin.addstr(y, x,   "                        ", curses.color_pair(8))
+                self.backWin.addstr(y+1, x, "                        ", curses.color_pair(8))
+                self.backWin.addstr(y+2, x, "                        ", curses.color_pair(8))
+                self.backWin.addstr(y+3, x, "                        ", curses.color_pair(8))
+                self.backWin.addstr(y+4, x, "                        ", curses.color_pair(8))
+                self.backWin.addstr(y+5, x, "                        ", curses.color_pair(8))
 
         def drawAsteroidL(self, x, y):
                 self.backWin.addstr(y+1, x,  "             __________", curses.color_pair(9))
@@ -705,6 +726,20 @@ class Background():
                 self.backWin.addstr(y+10, x, "       \\__\\___  |             |", curses.color_pair(9))
                 self.backWin.addstr(y+11, x, "          \___\\/       ___O__/", curses.color_pair(9))
                 self.backWin.addstr(y+12, x, "              \\_______/", curses.color_pair(9))
+
+        def clearAsteroidL(self, x, y):
+                self.backWin.addstr(y+1, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+2, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+3, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+4, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+5, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+6, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+7, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+8, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+9, x,  "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+10, x, "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+11, x, "                               ", curses.color_pair(9))
+                self.backWin.addstr(y+12, x, "                               ", curses.color_pair(9))
         
 
         def drawCloudS(self, x, y):
@@ -714,6 +749,13 @@ class Background():
                 self.backWin.addstr(y+3, x, "~~~   ~~~~~~")
                 self.backWin.addstr(y+4, x, "  ~~~~")
 
+        def clearCloudS(self, x, y):
+                self.backWin.addstr(y, x,   "             ")
+                self.backWin.addstr(y+1, x, "             ")
+                self.backWin.addstr(y+2, x, "             ")
+                self.backWin.addstr(y+3, x, "             ")
+                self.backWin.addstr(y+4, x, "             ")
+
         def drawCloudM(self, x, y):
                 self.backWin.addstr(y, x,   "            ~~~~~~~~")
                 self.backWin.addstr(y+1, x, "        ~~~~~      ~~")
@@ -722,6 +764,14 @@ class Background():
                 self.backWin.addstr(y+4, x, "  ~~~~        ~~~~~~~~~")
                 self.backWin.addstr(y+5, x, "     ~~~~~~~~~~")
 
+        def clearCloudM(self, x, y):
+                self.backWin.addstr(y, x,   "                         ")
+                self.backWin.addstr(y+1, x, "                         ")
+                self.backWin.addstr(y+2, x, "                         ")
+                self.backWin.addstr(y+3, x, "                         ")
+                self.backWin.addstr(y+4, x, "                         ")
+                self.backWin.addstr(y+5, x, "                         ")
+                
         def drawCloudL(self, x, y):
                 self.backWin.addstr(y, x,   "  ~~~~~~             ~~~~~~~")
                 self.backWin.addstr(y+1, x, "~~~    ~~~~~~      ~~~      ~~")
@@ -730,6 +780,14 @@ class Background():
                 self.backWin.addstr(y+4, x, "  ~~~~        ~~~~~~~~~")
                 self.backWin.addstr(y+5, x, "     ~~~~~~~~~~")
         
+        def clearCloudL(self, x, y):
+                self.backWin.addstr(y, x,   "                              ")
+                self.backWin.addstr(y+1, x, "                              ")
+                self.backWin.addstr(y+2, x, "                              ")
+                self.backWin.addstr(y+3, x, "                              ")
+                self.backWin.addstr(y+4, x, "                              ")
+                self.backWin.addstr(y+5, x, "                              ")
+                
         def drawClouds(self):
                 self.drawCloudL(1,0)
                 self.drawCloudS(60,0)
@@ -748,16 +806,31 @@ class Background():
                 self.drawAsteroidL(0,0)
                 self.drawAsteroidS(19,9)
                 self.drawAsteroidM(45,13)
-                self.drawAsteroidS(60,0) 
+                self.drawAsteroidS(60,0)
+
+        def drawNothing(self):
+                self.clearCloudL(1,0)
+                self.clearCloudS(60,0)
+                self.clearCloudM(15,9)
+                self.clearCloudS(7,18)
+                self.clearStars(0,0)
+                self.clearStars(60,0)
+                self.clearStars(15,9)
+                self.clearStars(45,13)
+                self.clearStars(7,18)
+                self.clearAsteroidL(0,0)
+                self.clearAsteroidS(19,9)
+                self.clearAsteroidM(45,13)
+                self.clearAsteroidS(60,0)
+                
                 
 class Input():
         
-        def __init__(self , stdscr , spaceShip, player):
+        def __init__(self , stdscr , spaceShip):
                 self.stdscr = stdscr
                 self.spaceShip = spaceShip
                 self.cmd = -1
                 self.otherCMD = -1
-                self.player = player
         
         def pause(self):
                 choice = 1
@@ -842,23 +915,23 @@ class Input():
         
                                 
 
-        def processInput(self):
+        def processInput(self, player):
                 cmd = self.stdscr.getch()
-                self.cmd = cmd
-                if self.player == 0:
+                #self.cmd = cmd
+                if player == 0:
                         if (cmd != curses.KEY_RIGHT and cmd != curses.KEY_LEFT and cmd != ord('p') and
                            cmd != ord('a') and cmd != ord('d') and cmd != 32):
-                                cmd = 0
-                elif self.player == 1:
+                                cmd = 300
+                elif player == 1:
                         if (cmd != curses.KEY_UP and cmd != curses.KEY_DOWN and cmd != ord('p') and
                            cmd != ord('s') and cmd != ord('w') and cmd != 32):
-                                cmd = 0
+                                cmd = 300
 
                 s1.sendInput(str(cmd))
                 otherCMD = int(s1.otherInput())
                 self.otherCMD = otherCMD
 
-                if (cmd != 0 or otherCMD != 0):
+                if (cmd != 300 or otherCMD != 300):
                         #"a"
                         if(cmd == ord('a') or otherCMD == ord('a')):
                                 self.spaceShip.boostLeft()
@@ -978,6 +1051,9 @@ class GameLoop:
                 
         def startGame(self , stdscr):
                 global MAX_X , MAX_Y , GAMEOBJECTDICT , ACTIVEOBJECTSET , FRAMECOUNT
+                FRAMECOUNT = 0
+                GAMEOBJECTDICT = {}
+                ACTIVEOBJECTSET = set()
                 self.stdscr = stdscr
                 self.stdscr.nodelay(1)
                 self.stdscr.keypad(1)
@@ -998,26 +1074,51 @@ class GameLoop:
                 curses.curs_set(0)
                 self.createBackground()
                 #----------------------------------------------------------------------
+                MAX_Y , MAX_X = stdscr.getmaxyx()
+                
+                self.asteroidSpawner = Spawner(60 , Asteroid) #60 is desired gametime
+                self.spaceShip = Spaceship(int(MAX_X/2) , int(MAX_Y/2))
+                self.shGun = self.spaceShip.gun
+                self.userInput = Input(stdscr , self.spaceShip)
+                self.score = Score()
+                self.ammoDisp = AmmoDisplay(self.shGun.MAXAMMO)
+                #---------------
+                self.renderSet = set()
+                self.explosions  = [Explosion(0 , 0 , 16) for i in range(20)]
+                #---------------
+                #self.player = -1
                 play = self.menu()
                 while(play):
-                        FRAMECOUNT = 0
-                        GAMEOBJECTDICT = {}
-                        ACTIVEOBJECTSET = set()
-                        self.stdscr.clear()
-                        MAX_Y , MAX_X = stdscr.getmaxyx()
-                        self.asteroidSpawner = Spawner(60 , Asteroid) #60 is desired gametime
-                        self.spaceShip = Spaceship(int(MAX_X/2) , int(MAX_Y/2))
-                        self.shGun = self.spaceShip.gun
-                        self.userInput = Input(stdscr , self.spaceShip, self.player)
-                        self.score = Score()
-                        self.ammoDisp = AmmoDisplay(self.shGun.MAXAMMO)
-                        #---------------
-                        self.renderSet = set()
-                        self.explosions  = [Explosion(0 , 0 , 16) for i in range(20)]
-                        #---------------
-
+                        self.resetGame()
                         self.runGameLoop()
-                        play = self.menu()
+                        self.menu()
+
+        def resetGame(self):            
+                global GAMEOBJECTDICT , MAX_X , MAX_Y , FRAMECOUNT , ACTIVEOBJECTSET, FRAMECOUNT
+                for oid in ACTIVEOBJECTSET:
+                        try:
+                                o = GAMEOBJECTDICT[oid]
+                        except:
+                                pass
+                        else:                   
+                                o.gop.window.erase()                    
+                                o.gop.coords.setXYPos(0 , 0)
+                                o.gop.movePanelPos()
+                for e in self.explosions:
+                        e.gop.window.erase()
+                        e.gop.coords.setXYPos(0 , 0)
+                        e.gop.movePanelPos()
+                self.stdscr.erase()
+                for b in self.background:
+                        b.drawNothing() 
+                FRAMECOUNT = 0
+                self.spaceShip.gop.coords.setXYPos((MAX_X/2) , (MAX_Y/2))
+                self.spaceShip.burnerFlag = False
+                self.spaceShip.gop.window.erase()
+                self.spaceShip.drawShip()
+                self.spaceShip.gun.availAmmo = 10
+                self.score.score = 0
+                self.asteroidSpawner = Spawner(60 , Asteroid)
                 
         def createBackground(self):
                 self.background = []
@@ -1033,13 +1134,16 @@ class GameLoop:
                 self.stdscr.erase()
                 self.stdscr.border(0)
                 self.stdscr.addstr(3, 5, "Controls")
-                self.stdscr.addstr(5, 10, "Use the arrow keys to move")
-                self.stdscr.addstr(7, 10, "Press p to pause the game")
-                self.stdscr.addstr(9, 10, "TIP: Pausing the game allows the user to switch")
-                self.stdscr.addstr(10, 15, "between moving vertically or horizontally")
-                self.stdscr.addstr(12, 10, "TIP: You can exit the game prematurely through")
-                self.stdscr.addstr(13, 15, "the pause menu")
-                self.stdscr.addstr(20, 10, "Press Any Key To Continue")
+                self.stdscr.addstr(5, 10, "Use the arrow keys or the wasd keys to move")
+                self.stdscr.addstr(7, 10, "Player 1 is the x-axis, Player 2 is y-axis")
+                self.stdscr.addstr(9, 10, "Use the space key to fire a laser")
+                self.stdscr.addstr(11, 10, "Press p to pause the game")
+                self.stdscr.addstr(13, 10, "TIP: wasd keys allow for faster movement,")
+                self.stdscr.addstr(14, 15, "but with less control")
+                self.stdscr.addstr(16, 10, "TIP: Pausing the game allows the user to switch")
+                self.stdscr.addstr(17, 15, "between moving vertically or horizontally")
+                self.stdscr.addstr(19, 10, "TIP: You can exit the game prematurely through")
+                self.stdscr.addstr(20, 15, "the pause menu")
                 self.stdscr.refresh()
                 while(True):
                         choice = self.stdscr.getch()
@@ -1279,9 +1383,17 @@ class GameLoop:
                 died = False
                 dieCount = 0
                 level = 1
+                display2 = False
+                display3 = False
                 while(play):
+                        if(FRAMECOUNT >= 1400):
+                                level = 3
+                        elif(FRAMECOUNT >= 700):
+                                level = 2
+                        else:
+                                level = 1
                         if died == False:
-                                play = self.userInput.processInput()
+                                play = self.userInput.processInput(self.player)
                                 if(self.userInput.cmd == ord('p') or self.userInput.otherCMD == ord('p')):
                                         currentTime = time.perf_counter()
                 #Update loop----------------------------------------
