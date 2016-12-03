@@ -653,7 +653,7 @@ class Spaceship():
                 self.gop.window.addch(2 , 6 , '>' , curses.color_pair(5)|curses.A_BOLD)
                 self.burner.draw(FRAMECOUNT)
                 if(not self.burnerFlag):
-                        self.gop.window.addstr(3 , 0 , ' ^^^ ' , curses.color_pair(3)|curses.A_BOLD)
+                        self.gop.window.addstr(3 , 0 , '  ^^^ ' , curses.color_pair(1)|curses.A_BOLD)
                         self.gop.window.addstr(4 , 0 , '     ' , curses.color_pair(3)|curses.A_BOLD)
                         self.gop.window.addstr(5 , 0 , '     ' , curses.color_pair(3)|curses.A_BOLD)
 
@@ -756,6 +756,7 @@ class Input():
                 self.stdscr = stdscr
                 self.spaceShip = spaceShip
                 self.cmd = -1
+                self.otherCMD = -1
                 self.player = player
         
         def pause(self):
@@ -843,6 +844,7 @@ class Input():
 
         def processInput(self):
                 cmd = self.stdscr.getch()
+                self.cmd = cmd
                 if self.player == 0:
                         if (cmd != curses.KEY_RIGHT and cmd != curses.KEY_LEFT and cmd != ord('p') and
                            cmd != ord('a') and cmd != ord('d') and cmd != 32):
@@ -854,6 +856,7 @@ class Input():
 
                 s1.sendInput(str(cmd))
                 otherCMD = int(s1.otherInput())
+                self.otherCMD = otherCMD
 
                 if (cmd != 0 or otherCMD != 0):
                         #"a"
@@ -1279,6 +1282,8 @@ class GameLoop:
                 while(play):
                         if died == False:
                                 play = self.userInput.processInput()
+                                if(self.userInput.cmd == ord('p') or self.userInput.otherCMD == ord('p')):
+                                        currentTime = time.perf_counter()
                 #Update loop----------------------------------------
                         newTime = time.perf_counter()
                         elapsedTime = newTime - currentTime
